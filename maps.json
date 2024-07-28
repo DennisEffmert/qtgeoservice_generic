@@ -1,0 +1,13 @@
+{
+    "mapSources": [
+        {
+            "style": "StreetMap",
+            "name": "World Street Map",
+            "description": "ArcGIS Online World Street Map",
+            "mobile": true,
+            "night": false,
+            "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer",
+            "copyrightText": "&copy; <a href='http://www.arcgis.com/home/item.html?id=3b93337983e9436f8db950e38a8629af'>Esri</a> contributors"
+        }
+    ]
+}
