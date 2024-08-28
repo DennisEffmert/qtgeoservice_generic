@@ -49,4 +49,7 @@ add_library(qtgeoservices_esri SHARED
 
 target_link_libraries(qtgeoservices_esri PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Location Qt${QT_VERSION_MAJOR}::Positioning Qt${QT_VERSION_MAJOR}::Network)
 
+install(FILES $<TARGET_FILE:qtgeoservices_esri> TYPE BIN)
+install(FILES $<TARGET_PDB_FILE_NAME:qtgeoservices_esri> CONFIGURATIONS Debug TYPE BIN)
+
 target_compile_definitions(qtgeoservices_esri PRIVATE QT_ESRI_PLUGIN_LIBRARY)
