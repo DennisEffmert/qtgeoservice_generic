@@ -8,8 +8,8 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt5 REQUIRED COMPONENTS core location positioning network)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS core location positioning network)
+find_package(QT NAMES Qt5 REQUIRED COMPONENTS Core Location Positioning Network)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Location Positioning Network)
 
 include_directories(qtgeoservices_esri ${Qt5Location_PRIVATE_INCLUDE_DIRS})
 
@@ -50,6 +50,5 @@ add_library(qtgeoservices_esri SHARED
 target_link_libraries(qtgeoservices_esri PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Location Qt${QT_VERSION_MAJOR}::Positioning Qt${QT_VERSION_MAJOR}::Network)
 
 install(FILES $<TARGET_FILE:qtgeoservices_esri> TYPE BIN)
-install(FILES $<TARGET_PDB_FILE_NAME:qtgeoservices_esri> CONFIGURATIONS Debug TYPE BIN)
 
 target_compile_definitions(qtgeoservices_esri PRIVATE QT_ESRI_PLUGIN_LIBRARY)
