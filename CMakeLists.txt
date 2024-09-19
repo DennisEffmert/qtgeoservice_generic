@@ -13,7 +13,7 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Location Positioning
 
 include_directories(qtgeoservices_esri ${Qt5Location_PRIVATE_INCLUDE_DIRS})
 
-add_library(qtgeoservices_esri SHARED
+add_library(qtgeoservices_esri MODULE
     geocodereply_esri.h
     geocodingmanagerengine_esri.h
     geomapsource.h
@@ -49,6 +49,9 @@ add_library(qtgeoservices_esri SHARED
 
 target_link_libraries(qtgeoservices_esri PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Location Qt${QT_VERSION_MAJOR}::Positioning Qt${QT_VERSION_MAJOR}::Network)
 
-install(FILES $<TARGET_FILE:qtgeoservices_esri> TYPE BIN)
+install(TARGETS qtgeoservices_esri
+    RUNTIME DESTINATION bin
+    LIBRARY DESTINATION lib
+)
 
 target_compile_definitions(qtgeoservices_esri PRIVATE QT_ESRI_PLUGIN_LIBRARY)
